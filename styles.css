@@ -1,0 +1,107 @@
+* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#calculatorbody {
+    display: flex;
+    height:400px; 
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgb(56, 85, 179);
+    flex-direction: column;
+}
+
+#output {
+    height: 50px;
+    background-color: rgb(212, 193, 139);
+    width: 200px;
+    margin: 0px;
+}
+
+#numpad {
+    height: 250px;
+    width: 200px;
+    background-color: rgb(56, 85, 179);
+    margin-top: 20px;
+    gap: 5px;
+
+}
+#rowone {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+#rowtwo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+#rowthree {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+#rowfour {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+
+#rowone button {
+    height:45px;
+    width: 45px;
+    background-color: white;
+    margin: 0px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'DS-Digital';
+
+
+}
+#rowtwo button {
+    height:45px;
+    width: 45px;
+    background-color:  white;
+    margin: 0px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'DS-Digital';
+
+}
+#rowthree button {
+    height:45px;
+    width: 45px;
+    background-color: white;
+    margin: 0px;
+    border-radius: 5px;    
+    border: none;
+    font-family: 'DS-Digital';
+
+}
+#rowfour button {
+    height:45px;
+    width: 45px;
+    background-color: rgb(185, 5, 5);
+    margin: 0px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'DS-Digital';
+
+}
+#rowone #CancelBtn, 
+#rowone #sqrroot,
+#rowtwo #idk,
+#rowthree #modulo {
+    background-color: rgb(185, 5, 5);
+}
