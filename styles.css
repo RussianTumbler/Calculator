@@ -19,6 +19,9 @@
     background-color: rgb(212, 193, 139);
     width: 200px;
     margin: 0px;
+    font-family: 'DS-Digital';
+    display: flex;
+    font-size: 30px;
 }
 
 #numpad {
@@ -99,7 +102,7 @@
     font-family: 'DS-Digital';
 
 }
-#rowone #CancelBtn, 
+#rowone #clearbtn, 
 #rowone #sqrroot,
 #rowtwo #idk,
 #rowthree #modulo {
