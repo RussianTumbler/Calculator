@@ -1,48 +1,104 @@
-//when ever a number is pushed store it into the first and second variable. when the equals is pressed it stores that number into
-// variable number 1 again and then leaves variable number 2 open again. 
-// when an operator button is pushed it uses the stored variables and runs them through the operator functions 
+const display = document.querySelector('#output');
+let num1 = ``
+let num2 = ``
+let result = ""
+let operator = ``
+let isCalculated = false
 
-
-
-firstInput = ``
-secondInput = ``
-
-function add () {
-
+function add (num1, num2) {
+  return num1 + num2;
 }
 
-function subtract () {
-
+function subtract (num1, num2) {
+  return num1 - num2
 }
 
-function multiply () {
-
+function multiply (num1, num2) {
+  return num1 * num2
 }
 
-function divide () {
-
+function divide (num1, num2) {
+  if (num2 === 0) {
+    return "ERROR"
+  } else {
+   return num1 / num2
+  }
 }
 
-
-// calls above functions
-function operate () {
-
+function calculate() {
+    if (operator === "+") {
+    result = add(Number(num1), Number(num2));
+  } else if (operator === "-") {
+    result = subtract(Number(num1), Number(num2));
+  } else if (operator === "x") {
+    result = multiply(Number(num1),Number(num2));
+  } else if (operator === '÷') {
+    result = divide(Number(num1), Number(num2));
+  }
+  num1 = result
+display.textContent = result
+  
 }
-
-// Clears the entire board
-const clearButton = document.querySelector('#clearbtn')
-    clearButton.addEventListener('click', () => {
-        output.textContent = '';
-    });
 
 
 const numPadButtons = document.querySelectorAll('.numbtn');
-const display = document.querySelector('#output');
-numPadButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const number = button.textContent;
-    output.textContent += number;
-    console.log (number)
-  });
+numPadButtons.forEach(button =>{
+button.addEventListener('click', (e) => {
+  isCalculated = false;
+  if (!operator) {
+  num1 += e.target.textContent
+  display.textContent = num1
+  } else {
+    num2 += e.target.textContent
+  display.textContent = num2
+  }
+  console.log(num1)
+  })
 });
+
+const equalsButton = document.querySelector('#equalsbtn');
+  equalsButton.addEventListener('click', () => {
+    calculate()
+    isCalculated = true;
+});
+
+
+const operatorButtons = document.querySelectorAll('.operator');
+operatorButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+if (operator && num1 && num2 && !isCalculated) {
+  calculate()
+}
+  isCalculated = false;  
+  num2 = ''
+    if (button.textContent === "+"){
+      operator = "+"
+    } else if (button.textContent === '-') {
+      operator = "-"
+    } else if (button.textContent === '÷') {
+      operator ='÷'
+    } else if (button.textContent === 'x') {
+      operator ='x'
+    } 
+    display.textContent = operator
+  })
+});
+
+const clearButton = document.querySelector('#clearbtn')
+function clearMemory () {
+  num1 = ``
+  num2 = ``
+  result = ``
+  operator = ``
+}
+function clearDisplay() {
+  display.textContent = '';
+}
+
+//Clears Memory and Display
+clearButton.addEventListener('click', () => {
+  clearMemory()
+  clearDisplay()
+});
+
 
